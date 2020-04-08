@@ -3,25 +3,26 @@ import StateContext from "../context";
 
 const handleChange = (e, dispatch) => {
   dispatch({
-    type: "CHANGE_NAME",
+    type: "CHANGE_ACTIVITY",
     name: e.target.value,
   });
 };
 
 const DemoComponent = () => {
   const [value, dispatch] = useContext(StateContext);
-  const { name } = value;
+  const { activity } = value;
   return (
     <>
-      <p>Hi, my name is {name}</p>
-      <form>
-        <input
-          type="text"
-          name="newName"
-          placeholder="New Name"
-          onChange={(e) => handleChange(e, dispatch)}
-        />
-      </form>
+      <p>The cat is: {activity}</p>
+      <button onClick={(e) => handleChange(e, dispatch, "eating")}>
+        Eating
+      </button>
+      <button onClick={(e) => handleChange(e, dispatch, "playing")}>
+        Playing
+      </button>
+      <button onClick={(e) => handleChange(e, dispatch, "napping")}>
+        Napping
+      </button>
     </>
   );
 };

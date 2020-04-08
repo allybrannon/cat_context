@@ -5,13 +5,13 @@ import "./App.css";
 
 function App() {
   const initialState = {
-    name: "Ally",
+    activity: "napping",
   };
 
   const reducer = (state, action) => {
     const { name } = action;
     switch (action.type) {
-      case "CHANGE_NAME":
+      case "CHANGE_ACTIVITY":
         return {
           ...state,
           name,
