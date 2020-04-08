@@ -14,15 +14,9 @@ const DemoComponent = () => {
   return (
     <>
       <p>The cat is: {activity}</p>
-      <button onClick={(e) => handleChange(e, dispatch, "eating")}>
-        Eating
-      </button>
-      <button onClick={(e) => handleChange(e, dispatch, "playing")}>
-        Playing
-      </button>
-      <button onClick={(e) => handleChange(e, dispatch, "napping")}>
-        Napping
-      </button>
+      <button onClick={() => handleChange("eating")}>Eating</button>
+      <button onClick={() => handleChange("playing")}>Playing</button>
+      <button onClick={() => handleChange("napping")}>Napping</button>
     </>
   );
 };
